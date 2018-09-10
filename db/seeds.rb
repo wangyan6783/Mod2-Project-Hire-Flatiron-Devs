@@ -37,13 +37,13 @@ p "Done with customers"
 
 p "Making projects with customers"
 80.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.quote, developer: Developer.all.sample, customer: Customer.all.sample)
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.quote, developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
 end
 p "Done making projects with customers"
 
 p "Making projects without customers"
 80.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.quote, developer: Developer.all.sample)
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.quote, developer: Developer.all.sample, price: rand(200..3000))
 end
 p "Done making projects without customers"
 
