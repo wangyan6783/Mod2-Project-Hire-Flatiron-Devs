@@ -5,23 +5,40 @@ class Developer < ApplicationRecord
   has_many :reviews, through: :projects
 
   def my_languages
-    self.languages.uniq.pluck(:name)
+    languages.uniq.pluck(:name)
   end
 
-  def my_reviews
-    #code
+  # def my_reviews
+  #   self.reviews
+  # end
+
+  def my_customer_names
+    customers.uniq.pluck(:name)
+  end
+
+  def my_customer_emails
+    customers.uniq.pluck(:email)
+  end
+
+  def my_project_titles
+    projects.pluck(:title)
   end
 
   def average_rating
-    #code
+    total = reviews.inject(0.0) do |sum, review|
+      sum + review.rating
+    end
+    (total / reviews.count).round(1)
   end
 
   def get_total_projects
-    #code
+    projects.count
   end
 
   def amt_earned
-    #code
+    projects.inject(0) do |sum, project|
+      sum + project.price
+    end
   end
 
 end##END OF CLASS
