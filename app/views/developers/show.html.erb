@@ -1,0 +1,8 @@
+<h2><%= flash[:notice] %></h2>
+
+<h1><%= @developer.name %></h1>
+<h2><%= @developer.title %></h2>
+<h2><%= @developer.description %></h2>
+<h2>Location: <%= @developer.location %></h2>
+
+<%= button_to "Edit Developer", edit_developer_path(@developer), method: :get %>

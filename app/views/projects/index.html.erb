@@ -1,3 +1,6 @@
+<h1><%= flash[:notice] %></h1>
+
 <% @projects.each do |project| %>
-  <%= project.title %>
+  <%= link_to project.title, project %>
+  <br>
 <% end %>

@@ -1,0 +1,4 @@
+<h2><%= flash[:notice] %></h2>
+
+<h1><%= @customer.name %></h1>
+<%= button_to "Edit Customer", edit_customer_path(@customer), method: :get %>

@@ -1,14 +1,1 @@
-<%= form_for @developer do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form" %>

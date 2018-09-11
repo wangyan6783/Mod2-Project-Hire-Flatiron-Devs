@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get '/about', to: "application#about"
   get '/signup', to: "application#signup"
   get '/jobs', to: "projects#index"
-  resources :reviews, except: [:destroy]
+  # get '/reviews/new', to: "reviews#create", as: "new_review"
+  resources :reviews, except: [:new]
   resources :projects
   resources :customers, except: [:destroy]
   resources :developers, except: [:destroy]

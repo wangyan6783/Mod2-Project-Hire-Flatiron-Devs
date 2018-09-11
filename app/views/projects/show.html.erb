@@ -1,6 +1,35 @@
 <h1>project show page</h1>
+<p><%= flash[:notice] %></p>
 <ul>
   <li><%= @project.title %></li>
   <li><%= @project.description %></li>
-  <li><%= @project.price %></li>
+  <li>$ <%= @project.price %>.00</li>
 </ul>
+
+<%= button_to "Edit Project", edit_project_path(@project), method: :get %>
+<br>
+<%= button_to "Delete Project", project_path(@project), method: :delete %>
+
+<br>
+<!-- Review button only show if current user == customer_id of @project -->
+<% if !(@project.review) %>
+  <p>Write a review</p>
+  <br>
+  <%= form_for @review do |f| %>
+    <%= f.number_field :rating %>
+    <br>
+    <%= f.text_area :content %>
+    <br>
+
+    <%= hidden_field_tag(:project_id, @project.id) %>
+
+    <%= f.submit "Submit Review" %>
+  <% end %>
+<% else %>
+  <h2>Project Review</h2>
+  <br>
+  <p><%= @project.review.rating %></p>
+  <p><%= @project.review.content %></p>
+
+  <%= button_to "Delete Review", review_path(@project.review), method: :delete %>
+<% end %>

@@ -1,0 +1,8 @@
+<p><%= flash[:notice] %></p>
+
+<h1>Developers</h1>
+
+<% @developers.each do |developer| %>
+  <%= link_to developer.name, developer %>
+  <br>
+<% end %>
