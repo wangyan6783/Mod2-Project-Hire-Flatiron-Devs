@@ -6,32 +6,33 @@ Project.destroy_all
 Review.destroy_all
 
 p "Making devs"
-Developer.create!(name: "Marissa Orea", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Yan Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Justin Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Maddie Tabing", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA")
-Developer.create!(name: "Forrest Benton", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Kritina Tong", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA")
-Developer.create!(name: "Arielle Ramirez", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago")
-Developer.create!(name: "Olivia Tian", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago")
-Developer.create!(name: "Jun Jian Shen", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Brian Wadlow", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago")
-Developer.create!(name: "Yichen Jin", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago")
-Developer.create!(name: "Andrew Linder", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami")
-Developer.create!(name: "Evans Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami")
-Developer.create!(name: "Garry Clerge", email: Faker::Internet.unique.email, title: "Scary Garry", description: Faker::RickAndMorty.quote, location: "Miami")
-Developer.create!(name: "Jesse McReady", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Johnny Soong", email: Faker::Internet.unique.email, title: "Splat", description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Jon Mines", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami")
-Developer.create!(name: "Lila Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Michael Coleman", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
-Developer.create!(name: "Parker Dinsmore", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA")
-Developer.create!(name: "Richard Chen", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC")
+Developer.create!(name: "Marissa Orea", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Yan Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Justin Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Maddie Tabing", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA", password: "google")
+Developer.create!(name: "Forrest Benton", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Kritina Tong", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA", password: "google")
+Developer.create!(name: "Arielle Ramirez", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Olivia Tian", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Jun Jian Shen", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Brian Wadlow", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Yichen Jin", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Andrew Linder", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
+Developer.create!(name: "Evans Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
+Developer.create!(name: "Garry Clerge", email: Faker::Internet.unique.email, title: "Scary Garry", description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
+Developer.create!(name: "Jesse McReady", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Johnny Soong", email: Faker::Internet.unique.email, title: "Splat", description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Jon Mines", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
+Developer.create!(name: "Lila Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Michael Coleman", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Parker Dinsmore", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA", password: "google")
+Developer.create!(name: "Richard Chen", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Andrew Cohn", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
 p "Done with devs"
 
 p "Making customers"
 20.times do
-  Customer.create!(name: Faker::Name.name, email: Faker::Internet.unique.email)
+  Customer.create!(name: Faker::Name.name, email: Faker::Internet.unique.email, password: "google")
 end
 p "Done with customers"
 

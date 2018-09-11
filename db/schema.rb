@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_202856) do
+ActiveRecord::Schema.define(version: 2018_09_11_204657) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "developers", force: :cascade do |t|
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_202856) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "languages", force: :cascade do |t|

@@ -12,6 +12,7 @@ class DevelopersController < ApplicationController
   def create
     developer = Developer.new(developer_params)
     if developer.save
+      flash[:notice] = "Sign Up Successful! Welcome, #{developer.name}!"
       redirect_to developer
     else
       render :new
@@ -40,6 +41,6 @@ class DevelopersController < ApplicationController
   end
 
   def developer_params
-    params.require(:developer).permit(:name, :email, :title, :description, :location)
+    params.require(:developer).permit(:name, :email, :title, :description, :location, :password)
   end
 end

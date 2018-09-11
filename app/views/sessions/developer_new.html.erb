@@ -1,0 +1,13 @@
+<h1>Developer Login</h1>
+
+<h3><%= flash[:notice] %></h3>
+
+<%= form_tag developer_login_path do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <%= submit_tag "Login" %>
+<% end %>
