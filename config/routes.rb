@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'application#homepage'
   resources :reviews
   resources :project_languages
   resources :languages
