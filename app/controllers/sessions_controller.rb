@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
   # authorized comes from application_controller
   # skip_before_action 'unlocks' this portion of our app
-  # skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :customer_authorized, only: [:new_customer, :create_customer, :new_developer, :create_developer]
+  skip_before_action :developer_authorized, only: [:new_developer, :create_developer, :new_customer, :create_customer]
 
   def new_developer # show developer a form to login w/ username/pw combo
     render :developer_new

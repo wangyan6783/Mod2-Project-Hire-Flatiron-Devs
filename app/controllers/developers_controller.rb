@@ -1,5 +1,8 @@
 class DevelopersController < ApplicationController
   before_action :find_developer, only: [:show, :edit, :update]
+  skip_before_action :customer_authorized
+  skip_before_action :developer_authorized, only: [:index, :new, :create, :show]
+
 
   def index
     @developers = Developer.all
@@ -10,10 +13,11 @@ class DevelopersController < ApplicationController
   end
 
   def create
-    developer = Developer.new(developer_params)
-    if developer.save
-      flash[:notice] = "Sign Up Successful! Welcome, #{developer.name}!"
-      redirect_to developer
+    @developer = Developer.new(developer_params)
+    if @developer.save
+      flash[:notice] = "Sign Up Successful! Welcome, #{@developer.name}!"
+      session[:developer_id] = @developer.id
+      redirect_to @developer
     else
       render :new
     end
@@ -23,6 +27,12 @@ class DevelopersController < ApplicationController
   end
 
   def edit
+    if current_developer.id == @developer.id
+      render :edit
+    else
+      flash[:notice] = "You are not authorized to see this"
+      redirect_to @developer
+    end
   end
 
   def update

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'application#homepage'
-  get '/about', to: "application#about"
-  get '/signup', to: "application#signup"
+  root 'homes#homepage'
+  get '/about', to: "homes#about"
   get '/jobs', to: "projects#index"
+  get '/signup', to: "homes#signup"
 
   get "/developer_login", to: "sessions#new_developer", as: "developer_login"
   get "/customer_login", to: "sessions#new_customer", as: "customer_login"

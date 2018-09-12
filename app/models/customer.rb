@@ -5,4 +5,8 @@ class Customer < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :password, :email, presence: true
+
+
+
+  
 end
