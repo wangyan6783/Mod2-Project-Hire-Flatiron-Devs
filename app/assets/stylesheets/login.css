@@ -48,6 +48,6 @@ body {
   border-top-right-radius: 0;
 }
 
-h1 {
-  color: red;
+.dev-form {
+  width: 50%;
 }
