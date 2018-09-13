@@ -6,28 +6,28 @@ Project.destroy_all
 Review.destroy_all
 
 p "Making devs"
-Developer.create!(name: "Marissa Orea", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Yan Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Justin Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Maddie Tabing", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA", password: "google")
-Developer.create!(name: "Forrest Benton", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Kritina Tong", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA", password: "google")
-Developer.create!(name: "Arielle Ramirez", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
-Developer.create!(name: "Olivia Tian", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
-Developer.create!(name: "Jun Jian Shen", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Brian Wadlow", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
-Developer.create!(name: "Yichen Jin", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Chicago", password: "google")
-Developer.create!(name: "Andrew Linder", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
-Developer.create!(name: "Evans Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
-Developer.create!(name: "Garry Clerge", email: Faker::Internet.unique.email, title: "Scary Garry", description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
-Developer.create!(name: "Jesse McReady", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Johnny Soong", email: Faker::Internet.unique.email, title: "Splat", description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Jon Mines", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "Miami", password: "google")
-Developer.create!(name: "Lila Wang", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Michael Coleman", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Parker Dinsmore", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "LA", password: "google")
-Developer.create!(name: "Richard Chen", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
-Developer.create!(name: "Andrew Cohn", email: Faker::Internet.unique.email, title: Faker::Pokemon.name, description: Faker::RickAndMorty.quote, location: "NYC", password: "google")
+Developer.create!(name: "Marissa Orea", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Yan Wang", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Justin Wang", email: "jwang@aol.com", title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Maddie Tabing", email: Faker::Internet.unique.email, title: "Sr.FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "LA", password: "google")
+Developer.create!(name: "Forrest Benton", email: "fbenton@aol.com", title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Kritina Tong", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "LA", password: "google")
+Developer.create!(name: "Arielle Ramirez", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Olivia Tian", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Jun Jian Shen", email: Faker::Internet.unique.email, title: "Sr.FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Brian Wadlow", email: Faker::Internet.unique.email, title: "Sr. FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Yichen Jin", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Chicago", password: "google")
+Developer.create!(name: "Andrew Linder", email: "alinder@aol.com", title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Miami", password: "google")
+Developer.create!(name: "Evans Wang", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Miami", password: "google")
+Developer.create!(name: "Garry Clerge", email: Faker::Internet.unique.email, title: "Scary Garry", description: Faker::MostInterestingManInTheWorld.quote, location: "Miami", password: "google")
+Developer.create!(name: "Jesse McReady", email: "jesse@aol.com", title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Johnny Soong", email: "fbenton@splat.com", title: "Splat Code Expert", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Jon Mines", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "Miami", password: "google")
+Developer.create!(name: "Lila Wang", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Michael Coleman", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Parker Dinsmore", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "LA", password: "google")
+Developer.create!(name: "Richard Chen", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
+Developer.create!(name: "Andrew Cohn", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
 p "Done with devs"
 
 p "Making customers"
@@ -38,13 +38,13 @@ p "Done with customers"
 
 p "Making projects with customers"
 80.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.quote, developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
 end
 p "Done making projects with customers"
 
 p "Making projects without customers"
 80.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.quote, developer: Developer.all.sample, price: rand(200..3000))
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, price: rand(200..3000))
 end
 p "Done making projects without customers"
 
