@@ -1,4 +1,18 @@
+
+<br><br><br>
 <h2><%= flash[:notice] %></h2>
 
 <h1><%= @customer.name %></h1>
-<%= button_to "Edit Customer", edit_customer_path(@customer), method: :get %>
+
+<h2>Projects:</h2><br>
+  <% if @customer.projects.empty? %>
+    <p>None</p>
+  <% else %>
+    <% @customer.projects.each do |project| %>
+      <p><%= link_to project.title, project %></p>
+  <% end %>
+<% end %>
+
+<% if current_customer && session[:customer_id] == current_customer.id %>
+  <%= button_to "Edit Customer", edit_customer_path(@customer), {method: :get, class: "btn btn-info col-3"} %>
+<% end %>

@@ -1,3 +1,6 @@
+
+<br><br><br>
+
 <h2><%= flash[:notice] %></h2>
 
 <h1><%= @developer.name %></h1>
@@ -5,4 +8,16 @@
 <h2><%= @developer.description %></h2>
 <h2>Location: <%= @developer.location %></h2>
 
-<%= button_to "Edit Developer", edit_developer_path(@developer), method: :get %>
+
+<h2>Projects:</h2><br>
+  <% if @developer.projects.empty? %>
+    <p>None</p>
+  <% else %>
+    <% @developer.projects.each do |project| %>
+      <p><%= link_to project.title, project %></p>
+  <% end %>
+<% end %>
+
+<% if current_developer && session[:developer_id] == current_developer.id %>
+  <%= button_to "Edit Developer", edit_developer_path(@developer), {method: :get, class: "btn btn-info col-3"} %>
+<% end %>

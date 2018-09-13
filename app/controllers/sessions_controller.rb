@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
   # authorized comes from application_controller
   # skip_before_action 'unlocks' this portion of our app
-  skip_before_action :customer_authorized, only: [:new_customer, :create_customer, :new_developer, :create_developer]
-  skip_before_action :developer_authorized, only: [:new_developer, :create_developer, :new_customer, :create_customer]
+  skip_before_action :customer_authorized, only: [:new_customer, :create_customer, :new_developer, :create_developer, :destroy]
+  skip_before_action :developer_authorized, only: [:new_developer, :create_developer, :new_customer, :create_customer, :destroy]
 
   def new_developer # show developer a form to login w/ username/pw combo
     render :developer_new
@@ -43,9 +43,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    # session[:user_id] = nil
-    session.delete(:user_id)
+    session[:customer_id] = nil
+    session[:developer_id] = nil
     flash[:notice] = "Logout Successful"
-    redirect_to login_path
+    redirect_to "/"
   end
 end

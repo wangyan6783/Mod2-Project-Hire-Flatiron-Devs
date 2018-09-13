@@ -1,1 +1,26 @@
-<%= render partial: "form" %>
+<%= form_for @customer do |f| %>
+  <% if @customer.errors.any? %>
+      <%= pluralize(@customer.errors.count, "error") %>
+      <ul>
+        <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+<br><br><br>
+<h1 class="row justify-content-md-center">Edit Your Info</h1><br>
+<div class="row justify-content-md-center">
+  <div class="col-md-6">
+  <%= f.label :name %>
+  <%= f.text_field :name, {class:"form-control"} %>
+  <%= f.label :email %>
+  <%= f.text_field :email, {class:"form-control"} %>
+  <%= f.label :password %>
+  <%= f.password_field :password, {class:"form-control"} %>
+  <br>
+  <%= f.submit("Edit Customer", {class: "btn btn-info btn-block"})%>
+<% end %>
+ </div>
+</div>
+<br>

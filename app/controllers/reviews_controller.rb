@@ -6,12 +6,12 @@ class ReviewsController < ApplicationController
   # end
 
   def create
-    review = Review.new(review_params)
-    review.project_id = params[:project_id]
-    if review.save
-      redirect_to review.project
+    @review = Review.new(review_params)
+    @review.project_id = params[:project_id]
+    if @review.save
+      redirect_to @review.project
     else
-      render project_path(review.project)
+      render project_path(@review.project)
     end
   end
 

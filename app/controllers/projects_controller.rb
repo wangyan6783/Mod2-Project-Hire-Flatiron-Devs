@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
+  skip_before_action :customer_authorized, only: [:index, :show]
+  skip_before_action :developer_authorized, only: [:index, :show, :new, :create]
 
   def index
+
+    @projects = Project.all
     if params[:sort] == "old_to_new"
      @projects = Project.date_created_asc
    elsif params[:sort] == "new_to_old"
@@ -20,9 +24,10 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    project = Project.new(project_params)
-    if project.save
-      redirect_to project
+    @project = Project.new(project_params)
+    @project.customer_id = params[:customer_id]
+    if @project.save
+      redirect_to @project
     else
       render :new
     end
@@ -57,7 +62,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :price)
+    params.require(:project).permit(:title, :description, :price, :customer_id)
   end
 
 end

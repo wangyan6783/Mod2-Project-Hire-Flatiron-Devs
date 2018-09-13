@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   get "/customer_login", to: "sessions#new_customer", as: "customer_login"
   post "/developer_login", to: "sessions#create_developer"
   post "/customer_login", to: "sessions#create_customer"
-  delete "/developer_logout", to: "sessions#developer_destroy", as: "developer_logout"
-  delete "/customer_logout", to: "sessions#customer_destroy", as: "customer_logout"
+  delete "/logout", to: "sessions#destroy", as: "logout"
 
   resources :reviews, except: [:new]
   resources :projects

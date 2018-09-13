@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :developer
+  belongs_to :developer, optional: true
   belongs_to :customer, optional: true
 
   has_many :project_languages

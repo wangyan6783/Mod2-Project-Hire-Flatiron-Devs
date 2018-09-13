@@ -1,8 +1,8 @@
 <br><br><br><br>
 
 <div class="row justify-content-md-center">
-  <div class="col-md-8">
-
+  <div class="col-md-6">
+<h2>Make Your Project</h2><br>
 <%= form_for @project do |f| %>
   <% if @project.errors.any? %>
     <%= pluralize(@project.errors.count, "error") %>
@@ -18,6 +18,7 @@
   <%= f.text_area :description, {class:"form-control"} %>
   <%= f.label :price %>
   <%= f.number_field :price, {class:"form-control"} %>
+  <%= hidden_field_tag(:customer_id, session[:customer_id]) %>
   <br>
   <%= f.submit("Create Project", {class: "btn btn-info btn-block"}) %>
   <% end %>
