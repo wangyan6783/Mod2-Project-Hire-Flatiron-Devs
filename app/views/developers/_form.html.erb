@@ -1,58 +1,33 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <!-- Bootstrap core CSS -->
-   <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <!-- custom CSS styling -->
-    <link href="/login.css" type="text/css" rel="stylesheet">
+<br><br><br>
 
-  </head>
-  <body>
-  <div class="dev-form">
-
-
-    <!-- FORM -->
-    <form class="my-form">
-    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
-  </form>
-
+<h1 class="row justify-content-md-center">Developer Signup</h1><br>
+ <div class="row justify-content-md-center">
+  <div class="col-md-8">
+  <%= form_for @developer do |f| %>
+      <% if @developer.errors.any? %>
+        <%= pluralize(@developer.errors.count, "error") %>
+        <ul>
+          <% @developer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    <%= f.label :name %>
+    <%= f.text_field :name, {class:"form-control"} %>
+    <%= f.label :email %>
+    <%= f.text_field :email, {class:"form-control"} %>
+    <%= f.label :password %>
+    <%= f.password_field :password, {class:"form-control"} %>
+    <%= f.label :title %>
+    <%= f.text_field :title, {class:"form-control"} %>
+    <%= f.label :description %>
+    <%= f.text_area :description, {class:"form-control"} %>
+    <%= f.label :location %>
+    <%= f.text_field :location, {class:"form-control"} %>
+    <br>
+    <%= f.submit("Create Developer", {class: "btn btn-info btn-block"}) %>
+  <% end %>
   </div>
-
-  </body>
-</html>
-
-
-
-<h1>devs rule</h1>
-
-<%= form_for @developer do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.submit %>
-<% end %>
+ </div>
+<br>

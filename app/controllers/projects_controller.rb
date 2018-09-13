@@ -2,7 +2,17 @@ class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = Project.date_created_desc
+    if params[:sort] == "old_to_new"
+     @projects = Project.date_created_asc
+   elsif params[:sort] == "new_to_old"
+     @projects = Project.date_created_desc
+   elsif params[:sort] == "high_to_low"
+     @projects = Project.price_desc
+   elsif params[:sort] == "low_to_high"
+     @projects = Project.price_asc
+    else
+     @projects = Project.all
+   end
   end
 
   def new

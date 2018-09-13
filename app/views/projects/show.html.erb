@@ -1,29 +1,4 @@
-
-
-<header>
-
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
-      <a class="navbar-brand" href="/signup">Hire Splat Developers!</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/projects">Jobs <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/about">About</a>
-          </li>
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav>
-</header>
-
+<br>
 
   <section class="jumbotron text-center">
         <div class="container">
@@ -31,8 +6,9 @@
           <p class="lead text-muted"><%= @project.description %></p>
           <p class="lead text-muted">Budget: $<%= @project.price %>.00</p>
           <p>
-            <a href="<%= edit_project_path(@project) %>" class="btn btn-primary my-2">Edit Project</a>
-            <a href="<%= project_path(@project)%>" data-method= "delete" class="btn btn-primary my-2">Delete Project</a>
+            <a href="<%= edit_project_path(@project) %>" class="btn btn-info col-6">Edit Project</a>
+            <br><br>
+            <a href="<%= project_path(@project)%>" data-method= "delete" class="btn btn-info col-6">Delete Project</a>
           </p>
         </div>
         <p><%= flash[:notice] %></p>
@@ -42,17 +18,21 @@
     <br>
     <!-- Review button only show if current user == customer_id of @project -->
     <% if !(@project.review) %>
-      <p>Write a review</p>
+      <p class="row justify-content-md-center">Write a review</p>
       <br>
+      <div class="row justify-content-md-center">
+        <div class="col-md-8">
       <%= form_for @review do |f| %>
-        <%= f.number_field :rating %>
+        <%= f.label :rating %>
+        <%= f.number_field :rating, {class:"form-control"} %>
         <br>
-        <%= f.text_area :content %>
+        <%= f.label :content %>
+        <%= f.text_area :content, {class:"form-control"} %>
         <br>
-
         <%= hidden_field_tag(:project_id, @project.id) %>
 
-        <%= f.submit "Submit Review" %>
+        <%= f.submit("Submit Review", {class: "btn btn-info btn-block"}) %>
+        <br><br>
       <% end %>
     <% else %>
       <h2>Project Review</h2>
