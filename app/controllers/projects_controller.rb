@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
-  skip_before_action :customer_authorized, only: [:index, :show]
-  skip_before_action :developer_authorized, only: [:index, :show, :new, :create]
+  skip_before_action :customer_authorized, only: [:index, :show, :accept]
+  skip_before_action :developer_authorized
 
   def index
 
@@ -46,6 +46,17 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       render :edit
+    end
+  end
+
+  def accept
+    @project = Project.find(params[:project_id])
+    @project.developer_id = session[:developer_id]
+    if @project.save
+      flash[:notice] = "Congrats on your new job!"
+      redirect_to @project
+    else
+      flash[:notice] = "Error accepting the project"
     end
   end
 

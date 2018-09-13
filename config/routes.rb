@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: "homes#about"
   get '/jobs', to: "projects#index"
   get '/signup', to: "homes#signup"
+  post "/projects_accept", to: "projects#accept", as: "accept_project"
 
   get "/developer_login", to: "sessions#new_developer", as: "developer_login"
   get "/customer_login", to: "sessions#new_customer", as: "customer_login"
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   post "/customer_login", to: "sessions#create_customer"
   delete "/logout", to: "sessions#destroy", as: "logout"
 
-  resources :reviews, except: [:new]
+  resources :reviews, only: [:create, :destroy]
   resources :projects
   resources :customers, except: [:destroy]
   resources :developers, except: [:destroy]
