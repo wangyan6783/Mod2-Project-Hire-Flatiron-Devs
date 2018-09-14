@@ -13,7 +13,6 @@ class CustomersController < ApplicationController
   end
 
   def create
-    byebug
     @customer = Customer.new(customer_params)
     if @customer.save
       flash[:notice] = "Sign Up Successful! Welcome, #{@customer.name}!"
