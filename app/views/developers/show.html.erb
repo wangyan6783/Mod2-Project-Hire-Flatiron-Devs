@@ -11,15 +11,16 @@
 <br>
 <h2><%= @developer.title %></h2>
 
+<br>
 <p>Average Rating:
     <% if @developer.reviews.empty? %>
     No Reviews
     <% else %>
-      <%= @developer.average_rating %></p>
+      <%= @developer.average_rating %>/5</p>
     <% end %>
 <br>
 
-<p>Amount Earned: $<%= @developer.amt_earned %>.00</p>
+<p>Career Earnings: $<%= @developer.amt_earned %>.00</p>
 <br>
 <p class="margin"><%= @developer.description %></p><br>
 <p>Location: <%= @developer.location %></p><br>
