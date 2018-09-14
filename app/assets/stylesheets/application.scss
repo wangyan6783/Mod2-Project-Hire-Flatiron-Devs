@@ -1,9 +1,8 @@
 @import "bootstrap";
 
-// .signup-page-buttons {
-//   display: grid;
-//   grid-template-columns: 30% 30%;
-// }
+.filter{
+  position: center;
+}
 
 .margin {
   margin-top: 0;
@@ -18,4 +17,22 @@
 
 .project-image {
   width: 80%
+}
+
+.avatar {
+height: 250px;
+width: 250px;
+border-radius: 200px;
+}
+
+.home-text{
+  font-size: 96px;
+  color: white;
+  padding-bottom: 32%;
+  padding-top: 68%;
+  text-shadow: 1px 1px 1px rgba(2, 20, 20, 0)
+}
+
+.home-img{
+  opacity: 0.9;
 }

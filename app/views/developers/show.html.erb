@@ -1,18 +1,24 @@
 <br><br><br>
 <div class="text-center">
 
-<%= image_tag(@developer.image_link) %>
+
 
 <h2><%= flash[:notice] %></h2>
+<div class"dev-profile">
+<h1><%= @developer.name %></h1>
+<br>
+<%= image_tag @developer.image_link, {class: "avatar"}%>
+<br>
+<h2><%= @developer.title %></h2>
 
-<h1><%= @developer.name %></h1><br>
-<h5><%= @developer.title %></h5><br>
 <p>Average Rating:
-  <% if @developer.reviews.empty? %>
+    <% if @developer.reviews.empty? %>
     No Reviews
-  <% else %>
-    <%= @developer.average_rating %></p>
-  <% end %>
+    <% else %>
+      <%= @developer.average_rating %></p>
+    <% end %>
+<br>
+
 <p>Amount Earned: $<%= @developer.amt_earned %>.00</p>
 <br>
 <p class="margin"><%= @developer.description %></p><br>
