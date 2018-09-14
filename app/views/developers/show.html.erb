@@ -7,7 +7,9 @@
 <div class"dev-profile">
 <h1><%= @developer.name %></h1>
 <br>
-<%= image_tag @developer.image_link, {class: "avatar"}%>
+<% if @developer.image_link %>
+  <%= image_tag @developer.image_link, {class: "avatar"}%>
+<% end %>
 <br>
 <h2><%= @developer.title %></h2>
 
