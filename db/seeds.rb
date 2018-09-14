@@ -54,7 +54,7 @@ end
 p "Done with customers"
 
 p "Making projects with customers"
-<<<<<<< HEAD
+
 30.times do
   Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..10000), image_link: project_imgs[rand(0...project_imgs.length)])
 end
@@ -71,7 +71,7 @@ p "Making projects without developers"
   Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, customer: Customer.all.sample, price: rand(200..10000), image_link: project_imgs[rand(0...project_imgs.length)])
 end
 p "Done making projects without customers"
-=======
+
   Project.create!(title: "Machine Learning App", description: "Interactive Machine learning web app", developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
   Project.create!(title: "Shopify store with custom functions", description: "Implementing Shopify online store", developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
   Project.create!(title: "Color Guessing Game", description: "Interactive website built on javascript", developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
@@ -144,7 +144,6 @@ p "Making projects without developers"
   Project.create!(title: "Dog Walking app", description: "I need an app that can help me monitor my 5 dogs for my dog walker and I to use.", customer: Customer.all.sample, price: rand(200..3000))
   Project.create!(title: "Trader of the Joe's website", description: "The Trader Jims, Inc., needs a developer to build a food shopping online store app.", customer: Customer.all.sample, price: rand(200..3000))
 p "Done making projects without developers"
->>>>>>> 4389969b37c0de065e12ce74a41db4a197642157
 
 p "Making reviews"
 projects = Project.where.not(customer_id: nil)
@@ -169,7 +168,6 @@ p "done with languages"
 
 p "Making project_langauges"
 Project.all.each do |project|
-  # byebug
   num = rand(0...9)
   ProjectLanguage.create!(project: project, language: Language.all[num])
   ProjectLanguage.create!(project: project, language: Language.all[num+1])
