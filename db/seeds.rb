@@ -5,6 +5,23 @@ ProjectLanguage.destroy_all
 Project.destroy_all
 Review.destroy_all
 
+project_imgs= ["https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/stuff-free-template.jpg",
+ "https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/jackson-free-personal-resume-website-template.jpg",
+ "https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/startup-free-template.jpg",
+ "https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/boxus-creative-digital-agency-free-website-template.jpg",
+ "https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/glint-free-fullscreen-small-business-template.jpg",
+ "https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/free-creative-agency-website-template.jpg",
+ "https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/katt-free-creative-blog-website-template.jpg",
+ "job1.png",
+ "job2.png",
+ "job3.png",
+ "job4.png",
+ "job5.png",
+ "job6.png",
+ "job7.png",
+ "job8.png"
+]
+
 p "Making devs"
 Developer.create!(name: "Marissa Orea", email: "marissa@gmail.com", title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
 Developer.create!(name: "Yan Wang", email: Faker::Internet.unique.email, title: "FullStack Developer", description: Faker::MostInterestingManInTheWorld.quote, location: "NYC", password: "google")
@@ -38,19 +55,19 @@ p "Done with customers"
 
 p "Making projects with customers"
 30.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..3000))
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, customer: Customer.all.sample, price: rand(200..10000), image_link: project_imgs[rand(0...project_imgs.length)])
 end
 p "Done making projects with customers"
 
 p "Making projects without customers"
 30.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, price: rand(200..3000))
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, developer: Developer.all.sample, price: rand(200..10000), image_link: project_imgs[rand(0...project_imgs.length)])
 end
 p "Done making projects without customers"
 
 p "Making projects without developers"
 30.times do
-  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, customer: Customer.all.sample, price: rand(200..3000))
+  Project.create!(title: Faker::SiliconValley.company, description: Faker::SiliconValley.motto, customer: Customer.all.sample, price: rand(200..10000), image_link: project_imgs[rand(0...project_imgs.length)])
 end
 p "Done making projects without customers"
 

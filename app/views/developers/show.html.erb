@@ -1,23 +1,31 @@
-
 <br><br><br>
+<div class="text-center">
 
 <h2><%= flash[:notice] %></h2>
 
-<h1><%= @developer.name %></h1>
-<h2><%= @developer.title %></h2>
-<h2><%= @developer.description %></h2>
-<h2>Location: <%= @developer.location %></h2>
-
-
-<h2>Projects:</h2><br>
-  <% if @developer.projects.empty? %>
-    <p>None</p>
+<h1><%= @developer.name %></h1><br>
+<h5><%= @developer.title %></h5><br>
+<p>Average Rating:
+  <% if @developer.reviews.empty? %>
+    No Reviews
   <% else %>
+    <%= @developer.average_rating %></p>
+  <% end %>
+<p>Amount Earned: $<%= @developer.amt_earned %>.00</p>
+<br>
+<p class="margin"><%= @developer.description %></p><br>
+<p>Location: <%= @developer.location %></p><br>
+
+  <% if !@developer.projects.empty? %>
+    <h5>Projects </h5><br>
     <% @developer.projects.each do |project| %>
-      <p><%= link_to project.title, project %></p>
+      <p><%= link_to project.title, project, class: "customize-text" %></p>
   <% end %>
 <% end %>
 
 <% if current_developer && session[:developer_id] == current_developer.id %>
   <%= button_to "Edit Developer", edit_developer_path(@developer), {method: :get, class: "btn btn-info col-3"} %>
 <% end %>
+<br><br><br>
+
+</div>
