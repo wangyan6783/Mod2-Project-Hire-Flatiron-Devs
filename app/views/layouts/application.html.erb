@@ -5,20 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono' %>
 
-
     <style>
       h1 {
-      font-family: 'Roboto', serif;
-      font-size: 45px;
-      color: #17a2b8;
+        font-family: 'Roboto', serif;
+        font-size: 45px;
+        color: #17a2b8;
       }
 
-      h5  {
+      h5 {
         font-family: 'Roboto Mono', serif;
       }
     </style>
@@ -27,51 +26,55 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
-          <a class="navbar-brand" href="/">// DEVS</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse w-100 order-3" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="/about">About</a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/developers">Developers <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="/projects">Jobs <span class="sr-only">(current)</span></a>
-              </li>
+        <a class="navbar-brand" href="/">// DEVS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-100 order-3" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/about">About</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/developers">Developers
+                <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/projects">Jobs
+                <span class="sr-only">(current)</span></a>
+            </li>
 
-              <% if session[:customer_id] %>
-                <li class="nav-item">
-                  <a class="nav-link active" href=<%= new_project_path %>>Create Project</a>
+            <% if session[:customer_id] %>
+              <li class="nav-item">
+                <a class="nav-link active" href=<%= new_project_path %>>Create Project</a>
+              </li>
+            <% end %>
+
+            <% if session[:developer_id] %>
+              <li class="nav-item active">
+                <a class="nav-link" href=<%= developer_path(session[:developer_id]) %>>My Profile
+                  <span class="sr-only">(current)</span></a>
+              </li>
+              <% elsif session[:customer_id] %>
+                <li class="nav-item active">
+                  <a class="nav-link" href=<%= customer_path(session[:customer_id]) %>>My Profile
+                    <span class="sr-only">(current)</span></a>
                 </li>
               <% end %>
 
-              <% if session[:developer_id] %>
-                  <li class="nav-item active">
-                    <a class="nav-link" href=<%= developer_path(session[:developer_id]) %>>My Profile <span class="sr-only">(current)</span></a>
-                  </li>
-              <% elsif session[:customer_id] %>
-                  <li class="nav-item active">
-                    <a class="nav-link" href=<%= customer_path(session[:customer_id]) %>>My Profile <span class="sr-only">(current)</span></a>
-                  </li>
-              <% end %>
-
               <% if session[:customer_id] || session[:developer_id] %>
-              <li class="nav-item">
-                <a class="nav-link active" href=<%= logout_path %> data-method="delete">Logout</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href=<%= logout_path %> data-method="delete">Logout</a>
+                </li>
               <% else %>
-              <li class="nav-item">
-                <a class="nav-link active" href="/signup">Login/Register</a>
-              </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/signup">Login/Register</a>
+                </li>
               <% end %>
             </ul>
           </div>
         </nav>
-    </header>
-    <%= yield %>
-  </body>
-</html>
+      </header>
+      <%= yield %>
+    </body>
+  </html>

@@ -1,12 +1,11 @@
-
 <br><br><br><br>
 
 <h1 class="row justify-content-md-center">Developer Signup</h1><br>
- <div class="row justify-content-md-center">
+<div class="row justify-content-md-center">
   <div class="col-md-5">
 
     <div class="text-center">
-  <%= form_for @developer do |f| %>
+      <%= form_for @developer do |f| %>
       <% if @developer.errors.any? %>
         <%= pluralize(@developer.errors.count, "error") %>
         <ul>
@@ -15,7 +14,7 @@
           <% end %>
         </ul>
       <% end %>
-        </div>
+    </div>
     <%= f.label :name %>
     <%= f.text_field :name, {class:"form-control"} %>
     <%= f.label :email %>
@@ -32,7 +31,8 @@
     <%= f.submit("Create Developer", {class: "btn btn-info btn-block"}) %>
   <% end %>
   <br><br>
-  <p class="text-center">Already a Member? <%= link_to "Login", developer_login_path, class: "customize-text" %></p>
-  </div>
- </div>
+  <p class="text-center">Already a Member?
+    <%= link_to "Login", developer_login_path, class: "customize-text" %></p>
+</div>
+</div>
 <br>
