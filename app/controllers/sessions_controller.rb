@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       redirect_to developer
     else
       flash[:notice] = "Invalid email or password"
-      redirect_to login_path
+      redirect_to developer_login_path
     end
   end
 
