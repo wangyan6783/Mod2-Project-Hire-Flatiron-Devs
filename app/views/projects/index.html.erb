@@ -1,49 +1,44 @@
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-4 font-weight-normal">Jobs Posted</h1>
-      <br><br>
-      <% if session[:developer_id]%>
-          <p>Here's a list of jobs</p>
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal">Jobs Posted</h1>
+    <br><br>
+    <% if session[:developer_id]%>
+      <p>Here's a list of jobs</p>
       <% elsif session[:customer_id] %>
-          <p class="lead font-weight-normal">Create a Project </p>
-          <a class="btn btn-outline-secondary" href="<%= new_project_path %>">Click Here</a>
-     <% else %>
-         <p class="lead font-weight-normal">Login to Create a Project </p>
-         <a class="btn btn-outline-secondary" href="<%= customer_login_path %>">Login</a>
-       <% end %>
+        <p class="lead font-weight-normal">Create a Project
+        </p>
+        <a class="btn btn-outline-secondary" href="<%= new_project_path %>">Click Here</a>
+      <% else %>
+        <p class="lead font-weight-normal">Login to Create a Project
+        </p>
+        <a class="btn btn-outline-secondary" href="<%= customer_login_path %>">Login</a>
+      <% end %>
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
     <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
   </div>
-   <!-- END OF HEADER -->
-   <div class="text-center">
+  <!-- END OF HEADER -->
+  <div class="text-center">
 
-
-   <h1><%= flash[:notice] %></h1>
-   <div class= "filter">
-   <%= form_tag "/projects", method: :get, class: "navbar-form navbar-left search-form" do %>
-    <h4 class="lead font-weight-normal">*Filter your search*</h4>
-     <%= select_tag(:sort, options_for_select([
-      ["Date Created (New to Old)", "new_to_old"],
-      ["Date Created (Old to New)", "old_to_new"],
-      ["Price (High to Low)", "high_to_low"],
-      ["Price (Low to High)", "low_to_high"]
-    ]
-  )
-) %>
-       <%= submit_tag "Submit", class: "btn btn-info" %>
-  <% end %>
-</div>
+    <h1><%= flash[:notice] %></h1>
+    <div class="filter">
+      <%= form_tag "/projects", method: :get, class: "navbar-form navbar-left search-form" do %>
+      <h4 class="lead font-weight-normal">*Filter your search*</h4>
+      <%= select_tag(:sort, options_for_select([ ["Date Created (New to Old)", "new_to_old"], ["Date Created (Old to New)", "old_to_new"], ["Price (High to Low)", "high_to_low"], ["Price (Low to High)", "low_to_high"] ] ) ) %>
+      <%= submit_tag "Submit", class: "btn btn-info" %>
+    <% end %>
+  </div>
 </div>
 
 <br>
- <% @projects.each do |project| %>
-<% if !project.developer %>
- <div>
-    <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3"> -->
+<% @projects.each do |project| %>
+  <% if !project.developer %>
+    <div>
+      <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3"> -->
       <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 py-3">
-          <h2 class="display-5"> <%= link_to project.title, project, class: "customize-text"%></h2>
+          <h2 class="display-5">
+            <%= link_to project.title, project, class: "customize-text"%></h2>
           <p class="lead">$<%= project.price %>.00</p>
           <p class="lead"><%= project.description %></p>
 

@@ -1,21 +1,20 @@
-
 <br><br><br>
 <div class="text-center">
   <h2><%= flash[:notice] %></h2>
   <br>
 
-
   <h1><%= @customer.name %></h1>
   <br><br>
 
   <% if !@customer.projects.empty? %>
-    <h5>Projects </h5><br>
+    <h5>Projects
+    </h5><br>
     <% @customer.projects.each do |project| %>
       <p><%= link_to project.title, project, class: "customize-text" %></p>
-  <% end %>
-<% end %>
-
-    <% if current_customer && session[:customer_id] == current_customer.id %>
-      <%= button_to "Edit Customer", edit_customer_path(@customer), {method: :get, class: "btn btn-info col-3"} %>
     <% end %>
+  <% end %>
+
+  <% if current_customer && session[:customer_id] == current_customer.id %>
+    <%= button_to "Edit Customer", edit_customer_path(@customer), {method: :get, class: "btn btn-info col-3"} %>
+  <% end %>
 </div>
