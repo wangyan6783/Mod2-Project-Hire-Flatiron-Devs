@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:create, :destroy]
   resources :projects
-  resources :customers, except: [:destroy]
+  resources :customers, except: [:destroy, :index]
   resources :developers, except: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

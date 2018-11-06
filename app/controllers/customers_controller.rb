@@ -3,11 +3,6 @@ class CustomersController < ApplicationController
   skip_before_action :developer_authorized
   skip_before_action :customer_authorized, only: [:index, :new, :create, :show]
 
-
-  def index
-    @customers = Customer.all
-  end
-
   def new
     @customer = Customer.new
   end
